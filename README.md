@@ -1,8 +1,43 @@
-# StudentApp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.2.
+# Student Management Application
+
+This is a **single-page Angular application** designed to manage student details. The application is divided into two main parts:
+
+## Part 1: Student Details Form
+- Built using **Angular Material components** for a clean and responsive user interface.
+- Includes the following fields:
+  - **Name**: Text input (required).
+  - **Email**: Email input with validation (required).
+  - **Gender**: Radio buttons (Male, Female, Other) (required).
+  - **Course**: Select box (Math, Science, History) (required).
+  - **Hobbies**: Checkboxes (Reading, Sports, Music).
+  - **City**: Autocomplete field with predefined city options.
+- A **Submit button** is provided to save the student details.
+
+## Part 2: Student Entries Table
+- Displays the student details submitted through the form in an **Angular Material table**.
+- Each row in the table includes:
+  - **Edit Button**: Allows editing of student details.
+  - **Delete Button**: Allows deletion of student details.
+- The table is dynamically updated to reflect changes (add, edit, delete).
+
+## Key Features
+- **Data Persistence**: Student details are stored in **local storage** for persistence across page reloads.
+- **Validation**: Form fields are validated to ensure accurate data entry.
+- **Responsive Design**: The application is designed to work seamlessly on different screen sizes.
+
+## Technologies Used
+- **Angular**: Framework for building the application.
+- **Angular Material**: UI components for a modern and consistent design.
+- **TypeScript**: Programming language for Angular development.
+- **HTML/CSS**: For structuring and styling the application.
+
+
+------------------------------------------------------------------------------------------------------------------------
 
 ## Development server
+
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.2.
 
 To start a local development server, run:
 
