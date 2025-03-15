@@ -1,0 +1,20 @@
+<div>
+  <!-- Radio Buttons -->
+  <mat-radio-group [(ngModel)]="selectedPart" (change)="onPartChange()">
+    <mat-radio-button value="part1" checked
+      >Student Details Form</mat-radio-button
+    >
+    <mat-radio-button value="part2">Student Entries Table</mat-radio-button>
+  </mat-radio-group>
+</div>
+
+<div class="container">
+  <!-- Dynamic Component Loader -->
+  <ng-container *ngIf="selectedPart === 'part1'">
+    <app-student-details></app-student-details>
+  </ng-container>
+
+  <ng-container *ngIf="selectedPart === 'part2'">
+    <app-student-entries></app-student-entries>
+  </ng-container>
+</div>
