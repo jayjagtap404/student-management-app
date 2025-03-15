@@ -14,7 +14,7 @@ import { EditStudentDialogComponent } from '../edit-student-dialog/edit-student-
 export class StudentEntriesComponent implements OnInit {
   students: Student[] = [];
   displayedColumns: string[] = ['name', 'email', 'gender', 'course', 'actions'];
-  dataSource = new MatTableDataSource<Student>(this.students); // Initialize with empty array
+  dataSource = new MatTableDataSource<Student>(this.students); 
 
   constructor(private studentService: StudentService, private dialog: MatDialog) {}
 
@@ -22,13 +22,13 @@ export class StudentEntriesComponent implements OnInit {
     this.loadStudents();
   }
 
-  // Load students from local storage
+
   loadStudents(): void {
     this.students = this.studentService.getStudents();
-    this.dataSource.data = this.students; // Update the data source
+    this.dataSource.data = this.students; 
   }
 
-  // Edit a student
+
   editStudent(student: Student): void {
     const dialogRef = this.dialog.open(EditStudentDialogComponent, {
       width: '400px',
@@ -38,16 +38,16 @@ export class StudentEntriesComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.studentService.updateStudent(result);
-        this.loadStudents(); // Refresh the table
+        this.loadStudents(); 
       }
     });
   }
 
-  // Delete a student
+
   deleteStudent(email: string): void {
     if (confirm('Are you sure you want to delete this student?')) {
       this.studentService.deleteStudent(email);
-      this.loadStudents(); // Refresh the table
+      this.loadStudents(); 
     }
   }
 }

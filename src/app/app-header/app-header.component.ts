@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './app-header.component.css'
 })
 export class AppHeaderComponent {
-  selectedPart: string = 'part1'; // Default selection
+  selectedPart: string = 'part1'; 
 
   onPartChange(): void {
     console.log('Selected Part:', this.selectedPart);

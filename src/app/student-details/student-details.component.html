@@ -1,82 +1,5 @@
-<!-- <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
-
-  <mat-form-field appearance="fill">
-    <mat-label>Name</mat-label>
-    <input matInput formControlName="name" required />
-    <mat-error *ngIf="studentForm?.get('name')?.hasError('required')">
-      Name is required
-    </mat-error>
-  </mat-form-field>
-
-
-  <mat-form-field appearance="fill">
-    <mat-label>Email</mat-label>
-    <input matInput formControlName="email" required email />
-    <mat-error *ngIf="studentForm?.get('email')?.hasError('required')">
-      Email is required
-    </mat-error>
-    <mat-error *ngIf="studentForm?.get('email')?.hasError('email')">
-      Invalid email format
-    </mat-error>
-  </mat-form-field>
-
-  <mat-radio-group formControlName="gender" required>
-    <mat-label>Gender</mat-label>
-    <mat-radio-button value="male">Male</mat-radio-button>
-    <mat-radio-button value="female">Female</mat-radio-button>
-    <mat-radio-button value="other">Other</mat-radio-button>
-  </mat-radio-group>
-
-
-  <mat-form-field appearance="fill">
-    <mat-label>Course</mat-label>
-    <mat-select formControlName="course" required>
-      <mat-option value="math">Math</mat-option>
-      <mat-option value="science">Science</mat-option>
-      <mat-option value="history">History</mat-option>
-    </mat-select>
-    <mat-error *ngIf="studentForm?.get('course')?.hasError('required')">
-      Course is required
-    </mat-error>
-  </mat-form-field>
-
-
-  <div>
-    <mat-label>Hobbies</mat-label>
-    <mat-checkbox formControlName="reading">Reading</mat-checkbox>
-    <mat-checkbox formControlName="sports">Sports</mat-checkbox>
-    <mat-checkbox formControlName="music">Music</mat-checkbox>
-  </div>
-
-
-  <mat-form-field appearance="fill">
-    <mat-label>City</mat-label>
-    <input
-      type="text"
-      matInput
-      formControlName="city"
-      [matAutocomplete]="auto"
-    />
-    <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let city of filteredCities | async" [value]="city">
-        {{ city }}
-      </mat-option>
-    </mat-autocomplete>
-  </mat-form-field>
-
-
-  <button
-    mat-raised-button
-    color="primary"
-    type="submit"
-    [disabled]="studentForm?.invalid"
-  >
-    Submit
-  </button>
-</form> -->
-
 <form [formGroup]="studentForm" (ngSubmit)="onSubmit()" class="student-form">
-  <!-- Name Input -->
+ 
   <mat-form-field appearance="fill" class="form-field">
     <mat-label>Name</mat-label>
     <input matInput formControlName="name" required />
@@ -85,7 +8,7 @@
     </mat-error>
   </mat-form-field>
 
-  <!-- Email Input -->
+  
   <mat-form-field appearance="fill" class="form-field">
     <mat-label>Email</mat-label>
     <input matInput formControlName="email" required email />
@@ -97,7 +20,7 @@
     </mat-error>
   </mat-form-field>
 
-  <!-- Gender Radio Buttons -->
+  
   <div class="form-field">
     <mat-label>Gender <span class="required-asterisk">*</span></mat-label>
     <mat-radio-group formControlName="gender" required class="radio-group">
@@ -105,12 +28,10 @@
       <mat-radio-button value="female" class="radio-button">Female</mat-radio-button>
       <mat-radio-button value="other" class="radio-button">Other</mat-radio-button>
     </mat-radio-group>
-    <!-- <mat-error *ngIf="studentForm?.get('gender')?.hasError('required')">
-      Gender is required
-    </mat-error> -->
+    
   </div>
 
-  <!-- Course Select Box -->
+  
   <mat-form-field appearance="fill" class="form-field">
     <mat-label>Course</mat-label>
     <mat-select formControlName="course" required>
@@ -123,7 +44,7 @@
     </mat-error>
   </mat-form-field>
 
-  <!-- Hobbies Checkboxes -->
+  
   <div class="form-field">
     <mat-label>Hobbies</mat-label>
     <div class="checkbox-group">
@@ -133,7 +54,7 @@
     </div>
   </div>
 
-  <!-- Autocomplete Field -->
+  
   <mat-form-field appearance="fill" class="form-field">
     <mat-label>City</mat-label>
     <input
@@ -149,7 +70,7 @@
     </mat-autocomplete>
   </mat-form-field>
 
-  <!-- Submit Button -->
+ 
   <div class="form-field">
     <button
       mat-raised-button

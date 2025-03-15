@@ -15,13 +15,13 @@ import { MatDialog } from '@angular/material/dialog';
 
 export class StudentDetailsComponent implements OnInit {
   studentForm: FormGroup | any;
-  cityControl: any; // Declare the property
+  cityControl: any; 
   cities: string[] = ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix'];
   filteredCities: Observable<string[]> | undefined;
 
   constructor(private fb: FormBuilder, private stu: StudentService,
     private dialog: MatDialog) {
-    this.cityControl = this.fb.control(''); // Initialize here
+    this.cityControl = this.fb.control(''); 
   }
 
   ngOnInit(): void {
@@ -33,7 +33,7 @@ export class StudentDetailsComponent implements OnInit {
       reading: [false],
       sports: [false],
       music: [false],
-      city: this.cityControl // Add cityControl to the form group
+      city: this.cityControl 
     });
 
     this.filteredCities = this.cityControl.valueChanges.pipe(
@@ -48,14 +48,6 @@ export class StudentDetailsComponent implements OnInit {
   }
 
   onSubmit(): void {
-    // if (this.studentForm?.valid) {
-    //   const formData = {
-    //     ...this.studentForm.value,
-    //     city: this.cityControl.value
-    //   };
-    //   // console.log('Form Data:', formData);
-    //   this.stu.addStudent(formData); 
-    // }
 
     if (this.studentForm?.valid) {
       const formData = {
@@ -64,15 +56,15 @@ export class StudentDetailsComponent implements OnInit {
       };
       this.stu.addStudent(formData);
 
-      // Open confirmation dialog
+      
       const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
         data: { message: 'Student details added to student entries table.' }
       });
 
-      // Reset the form after the dialog is closed
+      
       dialogRef.afterClosed().subscribe(() => {
         this.studentForm.reset();
-        this.cityControl.reset(); // Reset the city control separately
+        this.cityControl.reset(); 
       });
     }
   }
